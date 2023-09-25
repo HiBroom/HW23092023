@@ -5,15 +5,20 @@
 // 782 -> 8
 // 918 -> 1
 
-int SecondDigit( int num)
+int ThreeDigitNumber(string message)
 {
-    int thirdD = num / 10;
-    int secondD = thirdD % 10;
-    return secondD;
+    Console.Write(message);
+    int vallue = Convert.ToInt32(Console.ReadLine());
+    return vallue;
 }
 
-Console.Write("Input number: ");
-int number = Convert.ToInt32(Console.ReadLine());
 
-int res = SecondDigit(number);
-Console.WriteLine($"SecondDigit -> {res}");
+int number = ThreeDigitNumber("Input number: ");
+if (number < 100 || number >= 999)
+{
+    Console.WriteLine("This number isn't three-digit number");
+    return;
+}
+
+int SecondNumber = number / 10 % 10;
+Console.WriteLine($"SecondNumber: {SecondNumber}");
